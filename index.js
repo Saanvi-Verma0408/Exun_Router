@@ -12,18 +12,18 @@ app.get('/number/:num', function(req, res) {
     let number = req.params.num;
     var isPrimeno = "is prime";
 
-    if (num == 1) {
+    if (number === 1) {
         isPrimeno = "is not prime";
-        res.send(`${num} is not prime`);
+        res.send(`${number} is a unique number`);
     }
 
     else{
-        for (let i = 2; i < num; i++) {
+        for (let i = 2; i < number; i++) {
             if (number % i === 0) {
               isPrimeno = "is not a prime";
             }};
         res.send(`${number} ${isPrimeno}`);
     }})
 
-app.listen(port, () => console.log('Application is running'));
+app.listen(port, () => console.log('App is running'));
 console.log("listening on port 3000");
